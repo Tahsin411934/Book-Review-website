@@ -10,6 +10,7 @@ const BooksDetails = () => {
     const targetBook = Books.find(book => book.bookId == id)
     console.log(targetBook.bookId, id)
     const {bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = targetBook;
+    
     const handleReadBtn=()=>{
         saveReadBook(bookId)
     }

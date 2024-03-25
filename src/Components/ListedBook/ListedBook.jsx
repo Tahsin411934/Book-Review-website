@@ -1,3 +1,6 @@
+import { Outlet } from "react-router-dom";
+import ListedNav from "../ListedNav/ListedNav";
+
 const ListedBook = () => {
     return (
         <div className="container mx-auto">
@@ -11,8 +14,10 @@ const ListedBook = () => {
                 <option>Lost</option>
                 <option>Breaking Bad</option>
                 <option>Walking Dead</option>
-            </select>
+            </select>           
             </div>
+            <ListedNav></ListedNav>
+            <Outlet></Outlet>
         </div>
     );
 };
