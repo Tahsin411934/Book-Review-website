@@ -1,4 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveReadBook } from "../../Utility/LocalStorage";
+import { saveWishListBook } from "../../Utility/LocalStorageForWishList";
 
 
 const BooksDetails = () => {
@@ -7,7 +9,15 @@ const BooksDetails = () => {
     const { id } = useParams();
     const targetBook = Books.find(book => book.bookId == id)
     console.log(targetBook.bookId, id)
-    const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = targetBook;
+    const {bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = targetBook;
+    const handleReadBtn=()=>{
+        saveReadBook(bookId)
+    }
+
+    const handleWishListBtn=()=>{
+        saveWishListBook(bookId)
+    }
+    
     return (
         <div className="container mx-auto">
             <div className="">
@@ -47,7 +57,8 @@ const BooksDetails = () => {
                             </div>
                             
                         </div>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button onClick={handleReadBtn} className="btn  mr-5 ">Read</button>
+                        <button onClick={handleWishListBtn} className="btn bg-[#50B1C9] text-[#fff]">WishList</button>
                     </div>
                 </div>
             </div>

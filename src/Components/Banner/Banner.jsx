@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../../Styles/Banner.css'
 import banneImage from '../../assets/banner.png'
 
@@ -8,8 +9,8 @@ const Banner = () => {
     <img src={banneImage} className="max-w-sm " />
     <div>
       <h1 className="text-5xl font-bold text-[#131313]">Books to freshen <br /> up your bookshelf</h1>
+      <Link to={'/listedBook'} ><button className="btn font-bold text-xl bg-[#23BE0A] text-[#FFFFFF]">View The List</button></Link>
       
-      <button className="btn font-bold text-xl bg-[#23BE0A] text-[#FFFFFF]">View The List</button>
     </div>
   </div>
 </div>
