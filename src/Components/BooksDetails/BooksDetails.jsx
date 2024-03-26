@@ -1,7 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveReadBook } from "../../Utility/LocalStorage";
-import { saveWishListBook } from "../../Utility/LocalStorageForWishList";
-
+import { getStoredReadBooks, saveReadBook } from "../../Utility/LocalStorage";
+import { getStoredWishListBooks, saveWishListBook } from "../../Utility/LocalStorageForWishList";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BooksDetails = () => {
     const Books = useLoaderData();
@@ -9,16 +10,39 @@ const BooksDetails = () => {
     const { id } = useParams();
     const targetBook = Books.find(book => book.bookId == id)
     console.log(targetBook.bookId, id)
-    const {bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = targetBook;
-    
-    const handleReadBtn=()=>{
-        saveReadBook(bookId)
+    const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = targetBook;
+
+    const handleReadBtn = () => {
+        const storedReadBooks = getStoredReadBooks();
+        const isMatch = storedReadBooks.find(Id => Id === bookId);
+        console.log(storedReadBooks, isMatch)
+        isMatch ? toast.error('already added') : toast.success('Successfully created!');
+        saveReadBook(bookId);
+
+
     }
 
-    const handleWishListBtn=()=>{
-        saveWishListBook(bookId)
+    const handleWishListBtn = () => {
+        const storedWishListBooks = getStoredWishListBooks();
+        const isExist = storedWishListBooks.find(Id => Id === bookId);
+        
+        
+        const storedReadBooks = getStoredReadBooks();
+        console.log(storedReadBooks)
+        const isMatch = storedReadBooks.find(Id => Id === bookId);
+        
+        if (isExist) {
+            toast.error('Already added to wishlist !');
+        } 
+        else if (isMatch) {
+        toast.error('You Already added to read item !');
+       } 
+        
+        else {
+            saveWishListBook(bookId);
+            toast.success('Successfully added to wishlist!');
+        }
     }
-    
     return (
         <div className="container mx-auto">
             <div className="">
@@ -56,13 +80,14 @@ const BooksDetails = () => {
                                 <p>Rating:</p>
                                 <p>{rating}</p>
                             </div>
-                            
+
                         </div>
                         <button onClick={handleReadBtn} className="btn  mr-5 ">Read</button>
                         <button onClick={handleWishListBtn} className="btn bg-[#50B1C9] text-[#fff]">WishList</button>
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
