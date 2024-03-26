@@ -1,5 +1,3 @@
-
-
 const ErrorPage = () => {
     return (
         <section className="flex items-center h-full p-16 bg-gray-900 text-gray-100">

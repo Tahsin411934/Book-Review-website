@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import { useLoaderData } from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 
@@ -48,6 +48,13 @@ const PageToRead = () => {
             </BarChart>
         </ResponsiveContainer>
     );
+};
+PageToRead.propTypes = {
+    x: PropTypes.string.isRequired,
+    y: PropTypes.string.isRequired,
+    fill: PropTypes.string.isRequired,
+    width: PropTypes.string.isRequired,
+    height: PropTypes.string.isRequired,
 };
 
 export default PageToRead;

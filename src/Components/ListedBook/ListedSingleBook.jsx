@@ -1,11 +1,11 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { GrLocation } from "react-icons/gr";
 import { FaUserFriends } from "react-icons/fa";
 import { TiPrinter } from "react-icons/ti";
 
 const ListedSingleBook = ({ book }) => {
-    console.log(book)
+    
 
     return (
         <div key={book.bookId} className="container mx-auto mt-8">
@@ -36,7 +36,7 @@ const ListedSingleBook = ({ book }) => {
                             <span>{book.totalPages}</span>
                         </div>
                     </div>
-                    <hr />
+                    <hr className='-ml-0 h-[1px] border-none bg-slate-200 mx-auto w-[80%]' />
 
                    <div className='flex items-center  gap-5'>
                     <p style={{backgroundColor:'rgba(50, 142, 255, 0.15)'}} className='text-[#328EFF] rounded-badge p-2 text-base font-normal'> Category: {book.category}</p>
@@ -50,4 +50,7 @@ const ListedSingleBook = ({ book }) => {
     );
 };
 
+ListedSingleBook.propTypes = {
+    book: PropTypes.object.isRequired
+};
 export default ListedSingleBook;

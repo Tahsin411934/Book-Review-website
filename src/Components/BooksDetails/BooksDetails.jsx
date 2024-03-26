@@ -6,43 +6,38 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const BooksDetails = () => {
     const Books = useLoaderData();
-
     const { id } = useParams();
+
     const targetBook = Books.find(book => book.bookId == id)
-    console.log(targetBook.bookId, id)
     const { bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = targetBook;
 
+//Handle Read Button
     const handleReadBtn = () => {
         const storedReadBooks = getStoredReadBooks();
         const isMatch = storedReadBooks.find(Id => Id === bookId);
-        console.log(storedReadBooks, isMatch)
+//Set tostify
         isMatch ? toast.error('already added') : toast.success('Successfully created!');
         saveReadBook(bookId);
-
-
     }
-
+//Handle WishList button
     const handleWishListBtn = () => {
         const storedWishListBooks = getStoredWishListBooks();
         const isExist = storedWishListBooks.find(Id => Id === bookId);
-        
-        
         const storedReadBooks = getStoredReadBooks();
-        console.log(storedReadBooks)
         const isMatch = storedReadBooks.find(Id => Id === bookId);
-        
+//Set tostify
         if (isExist) {
             toast.error('Already added to wishlist !');
-        } 
+        }
         else if (isMatch) {
-        toast.error('You Already added to read item !');
-       } 
-        
+            toast.error('You Already added to read item !');
+        }
         else {
             saveWishListBook(bookId);
             toast.success('Successfully added to wishlist!');
         }
     }
+
     return (
         <div className="container mx-auto">
             <div className="">
@@ -53,16 +48,16 @@ const BooksDetails = () => {
                     <div className="w-[100%]">
                         <h1 className="text-5xl font-bold">{bookName}</h1>
                         <h1 className="p-1 rounded-lg text-base font-medium text-[#424242] -mt-8" >By: {author}</h1>
-                        <hr />
+                        <hr className='-ml-0 h-[1px] border-none bg-slate-200 mx-auto w-[80%]' />
                         <h1 className="p-1 rounded-lg text-base font-medium text-[#424242] -mt-2">{category}</h1>
-                        <hr />
+                        <hr className='-ml-0 h-[1px] border-none bg-slate-200 mx-auto w-[80%]' />
                         <p className="py-6"><span className="font-bold">Review: </span> {review}</p>
                         <div className='flex  gap-10'>
                             <p>Tags</p>
                             <p className='bg-[#F3F3F3] p-1 rounded-lg text-base font-medium text-[#23BE0A]'>{tags[0]}</p>
                             <p className='bg-[#F3F3F3] p-1 rounded-lg text-base font-medium text-[#23BE0A]'>{tags[1]}</p>
                         </div>
-                        <hr />
+                        <hr className='-ml-0 h-[1px] border-none bg-slate-200 mx-auto w-[80%]' />
                         <div>
                             <div className="flex gap-10">
                                 <p>Number of Pages:</p>
