@@ -5,7 +5,7 @@ const Header = () => {
     const navLink = <>
         <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/" ><li>Home</li></NavLink>
         <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/listedBook"><li>Listed Book</li></NavLink>
-        <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/PagesToRead"><li>Pages To Read</li></NavLink>
+        <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/pageToRead"><li>Pages To Read</li></NavLink>
     </>
     return (
         <div className="WorkSansFont container mx-auto">
