@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ListedSingleBook = ({ book }) => {
     console.log(book)
@@ -37,6 +38,7 @@ const ListedSingleBook = ({ book }) => {
                             <p>{book.rating}</p>
                         </div>
                     </div>
+                    <Link to={`/bookDetails/${book.bookId}`}> view details</Link>
                 </div>
             </div>
         </div>

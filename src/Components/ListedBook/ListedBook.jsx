@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { getStoredReadBooks } from '../../Utility/LocalStorage';
 import { getStoredWishListBooks } from '../../Utility/LocalStorageForWishList';
@@ -7,10 +7,11 @@ import ListedSingleBook from './ListedSingleBook';
 const ListedBook = () => {
     const Books = useLoaderData();
     console.log(Books);
-
     const [tabIndex, setTabIndex] = useState(0);
     const [readBooks, setReadBooks] = useState([]);
     const [wishListBooks, setWishListBooks] = useState([]);
+    const [sortBy, setSortBy] = useState(''); 
+     
 
     useEffect(() => {
         const storedReadBooks = getStoredReadBooks();
@@ -22,6 +23,18 @@ const ListedBook = () => {
         setWishListBooks(wishListBook);
     }, [Books]);
 
+    const handleSortChange = (e) => {
+        setSortBy(e.target.value);
+    };
+
+    const sortBooks = (books) => {
+        return books.sort((a, b) => {
+             
+                return b[sortBy] - a[sortBy];
+            
+    });
+    };
+
     console.log(readBooks);
 
     return (
@@ -30,12 +43,11 @@ const ListedBook = () => {
                 <h1>Books</h1>
             </div>
             <div className="flex items-center justify-center mt-10">
-                <select className="select select-primary w-full-sm max-w-xs bg-[#23BE0A] text-[#fff] m-auto">
-                    <option disabled defaultValue>Select sort by</option>
-                    <option>Game of Thrones</option>
-                    <option>Lost</option>
-                    <option>Breaking Bad</option>
-                    <option>Walking Dead</option>
+                <select className="select select-primary w-full-sm max-w-xs bg-[#23BE0A] text-[#fff] m-auto" onChange={handleSortChange}>
+                    <option>Sorted By</option>
+                    <option value="rating">Sort by Rating</option>
+                    <option value="totalPages">Sort by Number of Pages</option>
+                    <option value="yearOfPublishing">Sort by Year of Publishing</option>
                 </select>
             </div>
             <div role="tablist" className="tabs tabs-lifted grid grid-cols-6">
@@ -43,10 +55,10 @@ const ListedBook = () => {
                 <Link onClick={() => setTabIndex(1)} role="tab" className={`tab ${tabIndex === 1 ? 'tab-active' : ''}`}>Tab 2</Link>
             </div>
             {tabIndex === 0 &&
-                readBooks.map(readBook => <ListedSingleBook key={readBook.bookId} book={readBook} />)
+                sortBooks(readBooks).map(readBook => <ListedSingleBook key={readBook.bookId} book={readBook} />)
             }
             {tabIndex === 1 &&
-                wishListBooks.map(wishListBook => <ListedSingleBook key={wishListBook.bookId} book={wishListBook} />)
+                sortBooks(wishListBooks).map(wishListBook => <ListedSingleBook key={wishListBook.bookId} book={wishListBook} />)
             }
         </div>
     );
