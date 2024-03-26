@@ -1,0 +1,97 @@
+import { Link, useLoaderData } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getStoredReadBooks } from '../../Utility/LocalStorage';
+import { getStoredWishListBooks } from '../../Utility/LocalStorageForWishList';
+
+const ListedBook = () => {
+    const Books = useLoaderData();
+    const [tabIndex, setTabIndex] = useState(0);
+    const [readBooks, setReadBooks] = useState([]);
+    const [wishListBooks, setWishListBooks] = useState([]);
+    const [card, setCard] = useState(null); 
+
+    useEffect(() => {
+        const storedReadBooks = getStoredReadBooks();
+        const readBook = Books.filter(book => storedReadBooks.includes(book.bookId));
+        setReadBooks(readBook);
+
+        
+
+        const storedWishListBooks = getStoredWishListBooks();
+        const wishListBook = Books.filter(book => storedWishListBooks.includes(book.bookId));
+        setWishListBooks(wishListBook);
+    }, [Books]);
+    
+    const renderBookCard = (book) => (
+        <div key={book.bookId} className="container mx-auto">
+            <div className="card shadow-lg hero-content flex-col gap-10 items-center lg:flex-row">
+                <div className="w-[60%] flex justify-center items-center rounded-lg" style={{ backgroundColor: 'rgba(19, 19, 19, 0.05)' }}>
+                    <img src={book.image} className="w-[70%] rounded-lg" alt={book.bookName} />
+                </div>
+                <div className="w-[100%]">
+                    <h1 className="text-5xl font-bold">{book.bookName}</h1>
+                    <h1 className="p-1 rounded-lg text-base font-medium text-[#424242] -mt-8">By: {book.author}</h1>
+                    <h1 className="p-1 rounded-lg text-base font-medium text-[#424242] -mt-2">{book.category}</h1>
+                    <div className='flex gap-10 items-center'>
+                        <p>Tags</p>
+                        {book.tags.map(tag => (
+                            <p key={tag} className='bg-[#F3F3F3] p-1 rounded-lg text-base font-medium text-[#23BE0A]'>{tag}</p>
+                        ))}
+                    </div>
+                    <div>
+                        <div className="flex gap-10">
+                            <p>Number of Pages:</p>
+                            <p>{book.totalPages}</p>
+                        </div>
+                        <div className="flex gap-10 -mt-5">
+                            <p>Publisher:</p>
+                            <p>{book.publisher}</p>
+                        </div>
+                        <div className="flex gap-10 -mt-5">
+                            <p>Year of Publishing:</p>
+                            <p>{book.yearOfPublishing}</p>
+                        </div>
+                        <div className="flex gap-10 -mt-5">
+                            <p>Rating:</p>
+                            <p>{book.rating}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
+    const handleReadBooks = () => {
+        setTabIndex(0);
+        setCard(readBooks.map(book => renderBookCard(book)));
+    };
+    
+    const handleWishListBooks = () => {
+        setTabIndex(1);
+        setCard(wishListBooks.map(book => renderBookCard(book)));
+    };
+
+    return (
+        <div className="container mx-auto">
+            <div className="text-center p-1 rounded-xl" style={{ backgroundColor: 'rgba(19, 19, 19, 0.05)' }}>
+                <h1>Books</h1>
+            </div>
+            <div className="flex items-center justify-center mt-10">
+                <select className="select select-primary w-full-sm max-w-xs bg-[#23BE0A] text-[#fff] m-auto">
+                    <option disabled defaultValue>Select sort by</option>
+                    <option>Game of Thrones</option>
+                    <option>Lost</option>
+                    <option>Breaking Bad</option>
+                    <option>Walking Dead</option>
+                </select>
+            </div>
+            <div role="tablist" className="tabs tabs-lifted grid grid-cols-6">
+                <Link onClick={handleReadBooks} role="tab" className={`tab ${tabIndex === 0 ? 'tab-active' : ''}`}>Tab 1</Link>
+                <Link onClick={handleWishListBooks} role="tab" className={`tab ${tabIndex === 1 ? 'tab-active' : ''}`}>Tab 2</Link>
+            </div>
+            {card}
+        </div>
+    );
+};
+
+export default ListedBook;
