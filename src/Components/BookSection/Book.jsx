@@ -7,9 +7,9 @@ const Book = ({ book }) => {
     console.log(book);
     return (
         <Link className='no-underline' to={`/bookDetails/${bookId}`} >
-        <div className="card w-80 mb-5 bg-base-100 shadow-xl text-2xl font-bold text-[#131313]" style={{ fontFamily: "Playfair Display, serif" }}>
+        <div className="card lg:w-80 mb-5 bg-base-100 shadow-xl text-2xl font-bold text-[#131313]" style={{ fontFamily: "Playfair Display, serif" }}>
             <figure className="p-10 bg-[#F3F3F3] rounded-xl">
-                <img src={image} alt="Shoes" className="rounded-xl" />
+                <img src={image} alt="Book Image" className="rounded-xl h-[180px]" />
             </figure>
             <div className="-mt-4 ml-10">
                 <div className='flex  gap-10'>
