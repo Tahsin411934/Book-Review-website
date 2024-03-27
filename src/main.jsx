@@ -13,6 +13,7 @@ import BooksDetails from './Components/BooksDetails/BooksDetails';
 
 import PageToRead from './Components/PageToRead/PageToRead';
 import Review from './Components/Review/Review';
+import Ebook from './Components/Ebook/Ebook';
 
 
 
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
       {
         path:"/review",
         element: <Review></Review>
+      },
+      {
+        path:"/ebook",
+        element: <Ebook></Ebook>,
+        loader:()=> fetch('./ebooks.json')
       }
      
     ]

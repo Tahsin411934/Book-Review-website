@@ -21,7 +21,7 @@ const Review = () => {
 
        h4.innerText = `Book: ${e.target.book.value}`;
        p.innerText = `${e.target.review.value}`;
-      pR.innerText = `.......... ${e.target.name.value}`;
+       pR.innerText = `.......... ${e.target.name.value}`;
 
         review.appendChild(div);
         div.appendChild(h4);
@@ -32,9 +32,6 @@ const Review = () => {
         toast.success("SuccessFully Added Review!");
         
     }
-
-  
- 
 
     return (
         <>
