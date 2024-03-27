@@ -36,7 +36,9 @@ const ListedBook = () => {
     return (
         <div className="container mx-auto" style={{ fontFamily: '"Work Sans", sans-serif' }}>
             <div className="text-center p-1 rounded-xl" style={{ backgroundColor: 'rgba(19, 19, 19, 0.05)' }}>
-                <h1 className='text-2xl lg:text-3xl font-bold text-[#131313]'>Books</h1>
+                <h1 className='text-2xl lg:text-3xl font-bold text-[#131313]'>Listed Books</h1>
+                <p className='text-slate-600'>
+                &quot; Discover Your Next Read: Explore Our Collection of Books &quot;</p>
             </div>
             <div className="flex items-center justify-center mt-10">
                 <select className="select select-primary w-full-sm max-w-xs bg-[#23BE0A] text-[#fff] m-auto" onChange={handleSortChange}>

@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 const EbookSingleItem = ({ebook, AddToCart}) => {
-    const { bookId, bookName, author, image, rating, category, tags, } = ebook;
+    const { bookId, bookName, author, image, tags, } = ebook;
 
 
     return (
@@ -31,7 +31,9 @@ const EbookSingleItem = ({ebook, AddToCart}) => {
 };
 
 EbookSingleItem.propTypes = {
-    ebook: PropTypes.object.isRequired
+    ebook: PropTypes.object.isRequired,
+    AddToCart: PropTypes.object.isRequired,
+
 };
 
 export default EbookSingleItem;
