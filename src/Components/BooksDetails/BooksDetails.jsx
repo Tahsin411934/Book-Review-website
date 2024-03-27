@@ -16,7 +16,7 @@ const BooksDetails = () => {
         const storedReadBooks = getStoredReadBooks();
         const isMatch = storedReadBooks.find(Id => Id === bookId);
         //Set tostify
-        isMatch ? toast.error('already added') : toast.success('Successfully created!');
+        isMatch ? toast.error('already added to read list') : toast.success('Successfully added!');
         saveReadBook(bookId);
     }
     //Handle WishList button
@@ -27,7 +27,7 @@ const BooksDetails = () => {
         const isMatch = storedReadBooks.find(Id => Id === bookId);
         //Set tostify
         if (isMatch) {
-            toast.error('You Already added to read item !');
+            toast.error('This book is already in your reading list!');
         }
         else if (isExist) {
             toast.error('Already added to wishlist !');

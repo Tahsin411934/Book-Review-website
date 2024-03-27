@@ -15,8 +15,9 @@ const Review = () => {
         const h4 = document.createElement('h4');
         const p = document.createElement("p");
         const pR = document.createElement("p");
-        h4.classList = 'pl-[3%] text-xl -mb-2'
-        p.className = "pl-[12%]";
+        h4.classList = 'pl-[3%] text-xl -mb-2';
+        div.classList="bg-white w-[90%] mx-auto rounded-xl p-1 mt-3";
+        p.className = "pl-[10%]";
        pR.className = "pl-[70%] text-xl";
 
        h4.innerText = `Book: ${e.target.book.value}`;
@@ -83,10 +84,10 @@ const Review = () => {
                         </a>
 
                     </div>
-                    <div id="review" className="pb-10">
-                        <div>
-                            <h4 className="pl-[3%] text-xl -mb-2">The Silent Waters <span className="pl-[60%] text-slate-400">Example review</span> </h4>
-                            <p className="pl-[12%]">Riveting from start to finish, The Silent Waters by Brittainy C. Cherry intricately weaves a tale of love, loss, and redemption. The characters are flawlessly crafted, each with their own vulnerabilities and strengths that draw you into their world. Cherrys prose is emotive and lyrical, capturing the raw emotions of her characters with striking authenticity. As the story unfolds, themes of forgiveness and second chances resonate profoundly. The narratives depth and complexity make it a truly captivating read, leaving a lasting impression on the readers heart. The Silent Waters is a poignant masterpiece that will linger in your thoughts long after the final page.</p>
+                    <div id="review" className="pb-10 ">
+                        <div className="bg-white w-[90%] mx-auto rounded-xl p-1 mt-3">
+                            <h4 className="pl-[3%] text-xl -mb-2">Book: The Silent Waters <span className="pl-[40%] text-slate-400">Example review</span> </h4>
+                            <p className="pl-[10%]">Riveting from start to finish, The Silent Waters by Brittainy C. Cherry intricately weaves a tale of love, loss, and redemption. The characters are flawlessly crafted, each with their own vulnerabilities and strengths that draw you into their world. Cherrys prose is emotive and lyrical, capturing the raw emotions of her characters with striking authenticity. As the story unfolds, themes of forgiveness and second chances resonate profoundly. The narratives depth and complexity make it a truly captivating read, leaving a lasting impression on the readers heart. The Silent Waters is a poignant masterpiece that will linger in your thoughts long after the final page.</p>
                             <p className="pl-[70%] text-xl">......Abrar Fahim</p>
                         </div>
                     </div>

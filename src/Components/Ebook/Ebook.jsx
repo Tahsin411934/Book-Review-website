@@ -20,7 +20,7 @@ const Ebook = () => {
         <>
             <div className="flex ml-[48%]">
                 < PiShoppingCart size={42} />
-                <h1 className="mt-6">{cart.length}</h1>
+                <h1 className="mt-6 text-[#CC3333]">{cart.length}</h1>
                 <ToastContainer />
             </div>
 
