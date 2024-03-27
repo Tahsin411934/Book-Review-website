@@ -6,6 +6,7 @@ const Header = () => {
         <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/" ><li>Home</li></NavLink>
         <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/listedBook"><li>Listed Book</li></NavLink>
         <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/pageToRead"><li>Pages To Read</li></NavLink>
+        <NavLink className="ml-7 p-2 text-lg font-normal text-[#131313CC] border-none no-underline" to="/review"><li>Review</li></NavLink>
     </>
     return (
         <div className="WorkSansFont container mx-auto w-[95%]">
