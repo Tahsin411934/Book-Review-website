@@ -28,7 +28,17 @@ The Listed Book section allows users to explore and interact with a variety of b
 
 - **Read Book List:** View a list of books available for reading.
 - **WishList:** Maintain a wishlist of books to read in the future.
-- **View Detail:** Access detailed information about each book, including synopsis, author details, and reviews.
+- **View Detail:** Access detailed information about each book, including .
+i. image
+ii. bookName
+iii. author
+iv. category
+v. tags
+vi. totalPages
+vii. publisher
+viii. yearOfPublishing
+ix. rating
+x. A buon named View Details
 
 ---
 
