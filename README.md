@@ -45,7 +45,7 @@ x. A buon named View Details
 ## Pages To Read
 
 
-- **Chart:** A graphical representation showing the progress of reading pages vs. books over time.
+- **Bar Chart:** A graphical representation showing your read-list book's name against read-listed books totalPages.
 
 ---
 
@@ -53,7 +53,7 @@ x. A buon named View Details
 
 The Review section enables users to engage with books by providing reviews . It offers the following functionalities:
 
-- **Read and Review:** Access books to read and leave reviews.
+- **Read and Review:** Access books review to read and leave reviews.
 
 ---
 
