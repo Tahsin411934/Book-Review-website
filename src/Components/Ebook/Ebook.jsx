@@ -19,8 +19,9 @@ const Ebook = () => {
             setCart([...cart, bookId]);
             setTotalPrice([...totalPrice, dam]);
             setTitle([...title, bookName])
+            toast.success("Added To Cart!")
         } else {
-            toast("This Book Already Added To Cart!")
+            toast.error("This Book Already Added To Cart!")
         }
 
 
@@ -66,6 +67,11 @@ const Ebook = () => {
                     <div className="flex items-center gap-10 ml-[22%]">
                         <h1>Total Price</h1>
                         <h1>{total}</h1>
+                    </div>
+                    <div>
+                    <a href="#_" className="ml-[40%] font-semibold no-underline inline-flex items-center justify-center px-4 py-2 text-base leading-6 text-white whitespace-no-wrap bg-[#59C6D2]  rounded-md shadow-sm" data-rounded="rounded-md" data-primary="blue-600" data-primary-reset={{}}>
+                              Buy Now
+                        </a>
                     </div>
 
                     <p className="py-4">Press ESC key or click the button below to close</p>
