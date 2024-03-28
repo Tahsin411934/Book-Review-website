@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useLoaderData } from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid,  Legend, ResponsiveContainer, Cell } from 'recharts';
 
 const PageToRead = () => {
     const datas = useLoaderData();
@@ -43,7 +43,6 @@ const PageToRead = () => {
                         <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
                     ))}
                 </Bar>
-                <Tooltip />
                 <Legend />
             </BarChart>
         </ResponsiveContainer>

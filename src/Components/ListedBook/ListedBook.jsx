@@ -10,17 +10,21 @@ const ListedBook = () => {
     const [readBooks, setReadBooks] = useState([]);
     const [wishListBooks, setWishListBooks] = useState([]);
     const [sortBy, setSortBy] = useState('');
-
+    console.log(Books)
+    
 //get and check local storage data
     useEffect(() => {
-//read list 
-        const storedReadBooks = getStoredReadBooks();
-        const readBook = Books.filter(book => storedReadBooks.includes(book.bookId));
-        setReadBooks(readBook);
-//wishlist 
-        const storedWishListBooks = getStoredWishListBooks();
-        const wishListBook = Books.filter(book => storedWishListBooks.includes(book.bookId));
-        setWishListBooks(wishListBook);
+
+if (Books && Array.isArray(Books)) {
+    //read list 
+    const storedReadBooks = getStoredReadBooks();
+    const readBook = Books.filter(book => storedReadBooks.includes(book.bookId)); 
+    setReadBooks(readBook);
+    //wishList
+    const storedWishListBooks = getStoredWishListBooks();
+    const wishListBook = Books.filter(book => storedWishListBooks.includes(book.bookId));
+    setWishListBooks(wishListBook);
+}
     }, [Books]);
 
     const handleSortChange = (e) => {
