@@ -11,7 +11,8 @@
     "tags": ["সাহিত্যিক", "ঐতিহাসিক"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 1976},
-    "downloadLink": "download_link_1"
+    "downloadLink": "download_link_1",
+    "price": "120"
   },
   {
     "bookId": 2,
@@ -25,7 +26,8 @@
     "tags": ["জাসদ", "দুরাচার"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 1998},
-    "downloadLink": "download_link_2"
+    "downloadLink": "download_link_2",
+    "price": "130"
   },
   {
     "bookId": 3,
@@ -39,7 +41,8 @@
     "tags": ["ভালোবাসা", "পরিকল্পনা"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 1989},
-    "downloadLink": "download_link_3"
+    "downloadLink": "download_link_3",
+    "price": "190"
   },
   {
     "bookId": 4,
@@ -53,7 +56,8 @@
     "tags": ["প্রকৃতি", "সমাজ"],
     "publisher": "বংশালিপি প্রকাশনী",
     "yearOfPublishing": {"year": 2005},
-    "downloadLink": "download_link_4"
+    "downloadLink": "download_link_4",
+    "price": "220"
   },
   {
     "bookId": 5,
@@ -67,7 +71,8 @@
     "tags": ["প্রেম", "আদৃশ্য"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 1995},
-    "downloadLink": "download_link_5"
+    "downloadLink": "download_link_5",
+    "price": "120"
   },
   {
     "bookId": 6,
@@ -81,7 +86,8 @@
     "tags": ["বিচার", "আদালত"],
     "publisher": "বংশালিপি প্রকাশনী",
     "yearOfPublishing": {"year": 2010},
-    "downloadLink": "download_link_6"
+    "downloadLink": "download_link_6",
+    "price": "110"
   },
   {
     "bookId": 7,
@@ -95,7 +101,8 @@
     "tags": ["সাহিত্যিক", "ঐতিহাসিক"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 1999},
-    "downloadLink": "download_link_7"
+    "downloadLink": "download_link_7",
+    "price": "160"
   },
   {
     "bookId": 8,
@@ -109,7 +116,8 @@
     "tags": ["অপরাধ", "আন্দোলন"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 2008},
-    "downloadLink": "download_link_8"
+    "downloadLink": "download_link_8",
+    "price": "80"
   },
    {
     "bookId": 9,
@@ -123,6 +131,7 @@
     "tags": ["সমাজ", "উপন্যাস"],
     "publisher": "অনন্যা প্রকাশন",
     "yearOfPublishing": {"year": 1910},
-    "downloadLink": "download_link_9"
+    "downloadLink": "download_link_9",
+    "price": "140"
   }
 ]  
